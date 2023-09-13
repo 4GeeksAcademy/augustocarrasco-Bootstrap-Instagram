@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2ffe6c80c8.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </head>
-<body>
+<body class="d-flex">
     <!-- Modal -->
     <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -34,17 +35,19 @@
         </div>
       </div>
       <!-- Main -->
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <!-- Nav Bar -->
-        <div class="row bg-light align-items-center">
+        <div class="row bg-light align-items-center sticky-top mt-0 bg-opacity-25">
+            <!-- Title -->
             <div class="col-sm-6  d-flex align-items-center justify-content-sm-start justify-content-center">
                 <i class="fa-brands fa-instagram fs-3 ms-5"></i>
                 <h3 class="ms-2 mt-2" style="font-family: 'Oleo Script', cursive;"> Instagram</h3>
             </div>
-            <div class="col-sm-5 p-1 d-flex justify-content-sm-end justify-content-center  gap-2">
+            <!-- Button + Dropdowns -->
+            <div class="col-sm-5 p-1 d-flex justify-content-sm-end justify-content-center gap-2">
                 <button type="button" class="btn btn-success col-sm-auto" data-bs-toggle="modal" data-bs-target="#modal1">Create New Post</button>
-                <div class="dropdown col-1 ms-2">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="dropdown col-sm-auto ms-2">
+                    <button class="btn col-sm-auto btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-gear"></i>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -54,11 +57,34 @@
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
                     </ul>
-                  </div>
+                </div>
+                <div class="dropdown col-sm-auto ms-2">
+                    <button class="btn btn-secondary dropdown-toggle" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (dark)">
+                        <!-- <svg class="bi my-1 theme-icon-active"><use href="#moon-stars-fill"></use></svg> -->
+                        <i class="fa-solid fa-circle-half-stroke"></i>
+                     </button> 
+                     <ul class="dropdown-menu dropdown-menu-end" id="bd-theme-text" aria-labelledby="bd-theme-text">
+                        <li>
+                          <button type="button" class=" btn btn-secondary dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                Light
+                          </button>
+                        </li>
+                        <li>
+                          <button type="button" class=" btn btn-secondary dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="true">
+                                Dark
+                          </button>
+                        </li>
+                        <li>
+                          <button type="button" class=" btn btn-secondary dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                                Auto
+                          </button>
+                        </li>
+                      </ul>
+                </div>
             </div>
         </div>
         <!-- Content -->
-        <div>
+        <div class="">
             <!-- Tabs  -->
             <nav>
                 <div class="nav nav-tabs justify-content-center mt-4" id="nav-tab" role="tablist">
@@ -68,8 +94,9 @@
             </nav>
             <!-- Content -->
             <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade" id="nav-grid" role="tabpanel" aria-labelledby="nav-grid-tab">
-                    <div class=" d-flex flex-wrap row-cols-3">
+                <!-- Photo grid -->
+                <div class="tab-pane fade " id="nav-grid" role="tabpanel" aria-labelledby="nav-grid-tab">
+                    <div class=" d-flex flex-wrap row-cols-3 ">
                         <div class="col p-2">
                             <img class= "img-fluid" src="https://picsum.photos/1000/1000?random=1" alt="img1">
                         </div>
@@ -99,6 +126,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Photo feed -->
                 <div class="tab-pane fade show active d-flex justify-content-center" id="nav-single" role="tabpanel" aria-labelledby="nav-single-tab">
                     <div class="col-auto w-75 ">
                         <div class="p-2 border rounded mt-3">
